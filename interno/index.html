@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #21ce66;
+            --primary-hover: #1db95c;
+            --bg-color: #f9f9fb;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --card-bg: #ffffff;
+            --card-border: #e5e7eb;
+            --blue-accent: #0095f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 4rem 2rem;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #ffffff;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: var(--blue-accent);
+        }
+
+        .card-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #f0fdf4;
+            color: var(--primary);
+            border: 1px solid #bbf7d0;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+
+        .card-footer {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--blue-accent);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: gap 0.2s ease;
+        }
+
+        .card:hover .card-footer {
+            gap: 0.5rem;
+        }
+        
+        .arrow-icon {
+            transition: transform 0.2s ease;
+            color: var(--text-muted);
+        }
+        
+        .card:hover .arrow-icon {
+            transform: translateX(4px);
+            color: var(--blue-accent);
+        }
+
+        /* Specific card theming */
+        .card-admin .card-icon { background: #fdf2f8; color: #ec4899; border-color: #fbcfe8; }
+        .card-b2b .card-icon { background: #f5f3ff; color: #8b5cf6; border-color: #ede9fe; }
+        .card-demo .card-icon { background: #f0fdf4; color: var(--primary); border-color: #bbf7d0; }
+        .card-api .card-icon { background: #f0f9ff; color: #0ea5e9; border-color: #bae6fd; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Capstone Project</h1>
+            <p class="subtitle">A comprehensive suite of applications built for the Master India Village Directory ecosystem.</p>
+            
+            <div class="badges">
+                <span class="badge">React</span>
+                <span class="badge">Node.js</span>
+                <span class="badge">Express</span>
+                <span class="badge">Prisma</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">Vercel</span>
+            </div>
+        </header>
+
+        <div class="grid">
+            <!-- Admin Dashboard -->
+            <a href="https://admin-dashboard-theta-murex-15.vercel.app" target="_blank" rel="noopener noreferrer" class="card card-admin">
+                <div class="card-icon">🔐</div>
+                <h2 class="card-title">
+                    Admin Dashboard
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </h2>
+                <p class="card-desc">Internal dashboard for managing village data, user access, and system configurations with secure authentication.</p>
+                <div class="card-footer">
+                    Launch App
+                </div>
+            </a>
+
+            <!-- B2B Portal -->
+            <a href="https://b2b-portal-sigma-ochre.vercel.app" target="_blank" rel="noopener noreferrer" class="card card-b2b">
+                <div class="card-icon">💼</div>
+                <h2 class="card-title">
+                    B2B Portal
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </h2>
+                <p class="card-desc">Client-facing portal for registered businesses to access API keys, view usage analytics, and manage subscriptions.</p>
+                <div class="card-footer">
+                    Launch App
+                </div>
+            </a>
+
+            <!-- Demo App -->
+            <a href="https://demo-app-vert.vercel.app" target="_blank" rel="noopener noreferrer" class="card card-demo">
+                <div class="card-icon">🚀</div>
+                <h2 class="card-title">
+                    Demo App
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </h2>
+                <p class="card-desc">Interactive showcase application demonstrating how the Village Directory API can be integrated into real-world use cases.</p>
+                <div class="card-footer">
+                    Launch App
+                </div>
+            </a>
+
+            <!-- Backend API -->
+            <a href="https://capstone-backend-ebon-gamma.vercel.app" target="_blank" rel="noopener noreferrer" class="card card-api">
+                <div class="card-icon">⚡</div>
+                <h2 class="card-title">
+                    Backend API
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </h2>
+                <p class="card-desc">Robust RESTful API powering all applications, handling data operations, authentication, and database connectivity.</p>
+                <div class="card-footer">
+                    View Endpoints
+                </div>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
